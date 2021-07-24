@@ -5,6 +5,7 @@ const morgan = require ('morgan');
 const mongoose = require ('mongoose');
 const userRoute = require('./router/users.js');
 const authRoute = require('./router/auth.js');
+const postRoute = require('./router/Posts.js');
 const app = express();
 const url = "mongodb://127.0.0.1:27017/socialmedia";
 
@@ -20,6 +21,7 @@ app.use(morgan("common"));
 
 app.use('/api/users',userRoute);
 app.use('/api/auth',authRoute);
+app.use('/api/posts',postRoute);
 
 app.get('/',(req,res)=>{
     res.send('welcome');

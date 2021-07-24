@@ -32,14 +32,31 @@ const Userschema = new mongoose.Schema({
         type : Array,
         default : []
     },
-    followins : {
+    followings : {
         type : Array,
         default : []
     },
     isAdmin : {
         type : Boolean,
         default : false
+    },
+    desc : {
+        type : String,
+        max :50
+    },
+    city : {
+        type : String,
+        max : 50
+    },
+    from : {
+        type : String,
+        max : 50
+    },
+    relatonship : {
+        type : Number,
+        enum : [1,2,3]
     }
+
 
 },
 {timestamps:true}
